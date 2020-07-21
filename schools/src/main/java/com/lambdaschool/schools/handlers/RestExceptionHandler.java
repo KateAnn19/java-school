@@ -26,7 +26,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler
 
     public RestExceptionHandler()
     {
-        super();
+        super();//put this is in case you want to expand later
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
