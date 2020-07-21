@@ -16,9 +16,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "studcourses")
-public class StudCourses
-    extends Auditable
-    implements Serializable
+public class StudCourses extends Auditable implements Serializable
 {
     /**
      * Foreign key into the course table
@@ -108,8 +106,7 @@ public class StudCourses
             return false;
         }
         StudCourses that = (StudCourses) o;
-        return getCourse().equals(that.getCourse()) &&
-            getStudent().equals(that.getStudent());
+        return getCourse().equals(that.getCourse()) && getStudent().equals(that.getStudent());
     }
 
     @Override

@@ -18,8 +18,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "instructors")
-public class Instructor
-    extends Auditable
+public class Instructor extends Auditable
 {
     /**
      * The primary key (long) of the instructor table
@@ -38,9 +37,7 @@ public class Instructor
      * List of courses associated with this instructor. Does not get saved in the database directly.
      * Forms a one to many relationship with courses. One instructor to many courses.
      */
-    @OneToMany(mappedBy = "instructor",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true)
+    @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("instructor")
     private List<Course> courses = new ArrayList<>();
 
