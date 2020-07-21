@@ -21,8 +21,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "courses")
-public class Course
-    extends Auditable
+public class Course extends Auditable
 {
     /**
      * Primary key (long) for this course
@@ -45,20 +44,16 @@ public class Course
      * An instructor has many courses!
      */
     @ManyToOne
-    @JoinColumn(name = "instructorid",
-        nullable = false)
-    @JsonIgnoreProperties(value = "courses",
-        allowSetters = true)
+    @JoinColumn(name = "instructorid", nullable = false)
+    @JsonIgnoreProperties(value = "courses", allowSetters = true)
     private Instructor instructor;
 
     /**
      * Part of the join relationship between course and students
      * connects course to a course student combination
      */
-    @OneToMany(mappedBy = "course",
-        cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "course",
-        allowSetters = true)
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "course", allowSetters = true)
     private List<StudCourses> students = new ArrayList<>();
 
     /**
